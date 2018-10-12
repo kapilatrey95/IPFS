@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Show a file-select field:</h1>
+
+<h3>Show a file-select field which allows only one file to be chosen:</h3>
+<form action="/saveFile" method="POST" enctype='multipart/form-data' >
+  Select a file: <input type="file" name="myFile"><br><br>
+  <input type="submit">
+</form>
+
+<h3>Show a file-select field which allows multiple files:</h3>
+<form action="/saveFile" method="POST" >
+  Select files: <input type="file" name="myFile" enctype='multipart/form-data' multiple><br><br>
+  <input type="submit">
+</form>
+
+</body>
+</html>
