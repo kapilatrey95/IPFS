@@ -27,20 +27,27 @@ app.use(bodyParser.urlencoded({
 }));
 
 node.on('ready', () => {
-    const room = Room(node, 'room-name')
+    // const room = Room(node, 'room-name')
   
-    room.on('peer joined', (peer) => {
-      console.log('Peer joined the room', peer)
-    })
+    // room.on('peer joined', (peer) => {
+    //   console.log('Peer joined the room', peer)
+    // })
   
-    room.on('peer left', (peer) => {
-      console.log('Peer left...', peer)
-    })
+    // room.on('peer left', (peer) => {
+    //   console.log('Peer left...', peer)
+    // })
   
-    // now started to listen to room
-    room.on('subscribed', () => {
-      console.log('Now connected!')
-    })
+    // // now started to listen to room
+    // room.on('subscribed', () => {
+    //   console.log('Now connected!')
+    // })
+
+    node.id(function (err, identity) {
+        if (err) {
+          throw err
+        }
+        console.log(identity)
+      })
   })
 
 app.use(fileUpload());
